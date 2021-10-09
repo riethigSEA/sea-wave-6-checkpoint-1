@@ -6,18 +6,18 @@ public class Developer extends ITPerson {
 
     protected LocalDate employmentDate;
 
-    public Developer(String name, LocalDate employmentDate, boolean isCurrentlyWorkingAtCompany) {
-        super(name, isCurrentlyWorkingAtCompany);
+    public Developer(String name, LocalDate employmentDate) {
+        super(name);
         this.employmentDate = employmentDate;
     }
 
     @Override
-    public boolean canAccessResourceReadOnly() {
-        return false;
+    public boolean hasReadAccess() {
+        return true;
     }
 
     @Override
-    public boolean canAccessResourceReadAndWrite() {
-        return false;
+    public boolean hasWriteAccess() {
+        return employmentDate.isBefore(LocalDate.now().minusMonths(6));
     }
 }

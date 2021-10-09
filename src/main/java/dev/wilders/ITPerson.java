@@ -1,22 +1,22 @@
 package dev.wilders;
 
-import java.time.LocalDate;
-
 public abstract class ITPerson {
 
-    protected boolean isCurrentlyWorkingAtCompany;
     protected String name;
 
-    public ITPerson(String name, boolean isCurrentlyWorkingAtCompany) {
+    public ITPerson(String name) {
         this.name = name;
-        this.isCurrentlyWorkingAtCompany = isCurrentlyWorkingAtCompany;
     }
 
-    public void setIsCurrentlyWorkingAtCompany(boolean isCurrentlyWorkingAtCompany) {
-        this.isCurrentlyWorkingAtCompany = isCurrentlyWorkingAtCompany;
+    public String getName() {
+        return this.name;
     }
 
-    public abstract boolean canAccessResourceReadOnly();
-    public abstract boolean canAccessResourceReadAndWrite();
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public abstract boolean hasReadAccess();
+    public abstract boolean hasWriteAccess();
 
 }

@@ -4,18 +4,18 @@ public class Support extends ITPerson {
 
     protected int level;
 
-    public Support(String name, int level, boolean isCurrentlyWorkingAtCompany) {
-        super(name, isCurrentlyWorkingAtCompany);
+    public Support(String name, int level) {
+        super(name);
         this.level = level;
     }
 
     @Override
-    public boolean canAccessResourceReadOnly() {
-        return false;
+    public boolean hasReadAccess() {
+        return level > 0;
     }
 
     @Override
-    public boolean canAccessResourceReadAndWrite() {
-        return false;
+    public boolean hasWriteAccess() {
+        return level > 1;
     }
 }

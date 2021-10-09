@@ -2,10 +2,10 @@
 
 **Hints**
 
-- Try to solve the problems from memorizing what you learned first.
 - You can use resources and search engines of your choice.
+- Try to solve the problems from memorizing what you learned first.
 - If you get stuck, skip to the next step!
-- Regardless of whether you finish, remember to commit everything and push
+- Regardless of whether you finish, remember to commit everything and push at the end.
 
 ## Downloading and initializing of the project
 
@@ -24,7 +24,7 @@ Fork this repo and clone your copy of the repo to your local machine. **You will
 
 ##  Class diagram for IT-Crowd
 
-The following diagram shows the associations between entities of the IT-Crowd:
+The following diagram shows the associations between entities of the IT-Crowd, a group of IT-people employed at some company:
 
 * All members of the IT-Crowd are `ITPerson`
 * All `ITPerson` have to implement `hasReadAccess` and `hasWriteAccess` methods which return true or false.
@@ -37,7 +37,7 @@ The following diagram shows the associations between entities of the IT-Crowd:
 ###  Check Access Rights
 
 * Look at the currently implemented classes (start with `dev.wilders.ITPerson`) and understand the structure.  
-* The classes have already all party implemented, but their `hasReadAccess` and `hasWriteAccess` methods always return false.  
+* The classes are already partly implemented, but their `hasReadAccess` and `hasWriteAccess` methods always return false.  
 * You have to adjust those methods for `Admin`, `Developer` and `Support` to return the correct values according to the rules specified above.
 
 If the implementation is correct, all tests in unit test class `CheckITPersonAccessTest` should pass.
@@ -49,19 +49,6 @@ Due to some import error, the names of the whole IT-Crowd has been corrupted. Th
 * You have to repair the name, split the name in two at "_" and set the Name again correctly with Forename+" "+Lastname
 
 If your implementation is correct, all tests in unit test class `RepairCrowdNamesTest` should pass.
-
-### Taking Inventory of the Crowd
-
-We want to see how many `ITPerson` are working at our company. There should be a report like:
-
-```aidl
-Number of employees: 42
-Number of Admins: 2
-Number of Developers: 10
-Number of Support: 30
-```
-
-Remember that you can check the ITPerson with `instanceof` for her real type.
 
 ### Generifying the Crowd
 
@@ -83,17 +70,15 @@ When you change implementation parts, always make sure the tests still pass.
 
 ## Quiz
 
-You will find a  `Quiz.java`  file at the root of your local repository: compile and run it.
+You will find a `quiz.txt`  file at the root of your local repository.
 
-Answer the questions, and at the end it will generate a  `quiz.txt`  file.
+Answer the questions at the answer ("A:") lines.
 
-You can then edit the file manually to correct your answers.
-
-> Please answer honestly, without any help from the Internet!
+> Try to answer without any help from the Internet!
 
 
 ## Finalization
 
-Push the changes made to your local branch; and push everything to your forked Repo.
+Commit the changes made to your local branch; and push everything to your forked Repo.
 
-Now return to Odyssey and share the link to your Repo on GitHub.
+Post the URL of your Repo as a direct message to your trainer in Rocket Chat

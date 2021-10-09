@@ -7,15 +7,15 @@ public class ITPersonStorage {
 
     List persons = new ArrayList();
 
-    public boolean storeITPerson(Object person) {
+    public boolean storePerson(Object person) {
         return persons.add(person);
     }
 
-    public Object getLastStoredITPerson() {
+    public Object getLastStoredPerson() {
         return persons.get(persons.size()-1);
     }
 
-    public Object getFirstStoredITPerson() {
+    public Object getFirstStoredPerson() {
         return persons.get(0);
     }
 

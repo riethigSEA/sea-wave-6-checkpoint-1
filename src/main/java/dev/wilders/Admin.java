@@ -6,8 +6,8 @@ public class Admin extends ITPerson {
 
     protected LocalDate lastCertified;
 
-    public Admin(String name, LocalDate lastCertified, boolean isCurrentlyWorkingAtCompany) {
-        super(name, isCurrentlyWorkingAtCompany);
+    public Admin(String name, LocalDate lastCertified) {
+        super(name);
         this.lastCertified = lastCertified;
     }
 
@@ -16,12 +16,12 @@ public class Admin extends ITPerson {
     }
 
     @Override
-    public boolean canAccessResourceReadOnly() {
-        return false;
+    public boolean hasReadAccess() {
+        return lastCertified.isAfter(LocalDate.now().minusYears(1));
     }
 
     @Override
-    public boolean canAccessResourceReadAndWrite() {
-        return false;
+    public boolean hasWriteAccess() {
+        return lastCertified.isAfter(LocalDate.now().minusYears(1));
     }
 }
