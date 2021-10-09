@@ -17,11 +17,13 @@ public class Admin extends ITPerson {
 
     @Override
     public boolean hasReadAccess() {
-        return lastCertified.isAfter(LocalDate.now().minusYears(1));
+        // Add logic to evaluate Read access for Admin here.
+        return false;
     }
 
     @Override
     public boolean hasWriteAccess() {
-        return lastCertified.isAfter(LocalDate.now().minusYears(1));
+        // Add logic to evaluate Write access for Admin here.
+        return false;
     }
 }

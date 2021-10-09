@@ -13,11 +13,13 @@ public class Developer extends ITPerson {
 
     @Override
     public boolean hasReadAccess() {
-        return true;
+        // Add logic to evaluate Read access for Developer here.
+        return false;
     }
 
     @Override
     public boolean hasWriteAccess() {
-        return employmentDate.isBefore(LocalDate.now().minusMonths(6));
+        // Add logic to evaluate Write access for Developer here.
+        return false;
     }
 }

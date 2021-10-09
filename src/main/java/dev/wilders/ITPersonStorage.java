@@ -3,6 +3,9 @@ package dev.wilders;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class implements a ITPerson storage on Object base, ie. without Generics.
+ */
 public class ITPersonStorage {
 
     List persons = new ArrayList();
