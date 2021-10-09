@@ -22,40 +22,64 @@ Fork this repo and clone your copy of the repo to your local machine. **You will
 
 ## Exercises
 
-##  Java data structures
+##  Class diagram for IT-Crowd
 
-You will find an  `algos`  folder at the root of your local repository and you should write the following algorithms in the file  `Student.java`:
+The following diagram shows the associations between entities of the IT-Crowd:
 
-###  Major
+* All members of the IT-Crowd are `ITPerson`
+* All `ITPerson` have to implement `hasReadAccess` and `hasWriteAccess` methods which return true or false.
+* `Admin` are `ITPerson` with Read and Write access to Resources, if they are certified, ie. the `lastCertified` date is less than one year ago.
+* `Developer` are `ITPerson` with Read access always, but Write access only after their trial period of 6 months, ie. the `employmentDate` is more than 6 months ago.
+* `Support` are `ITPerson` with different levels of access, `level` 0 is no access, `level` 1 is Read access, `level` 2 is Write access.
 
-The school organizes an end-of-year party and all adult students are invited. In order to avoid sending invitations to underage students, you must create a method that checks a student's age and returns whether or not they are of age.
+![](docs/img/itperson.png)
 
-Create a static method named  _isLegal_, which returns "true" if the age passed as an argument is greater than or equal to 18 and returns "false" if it is not.
+###  Check Access Rights
 
-### Grouping people
+* Look at the currently implemented classes (start with `dev.wilders.ITPerson`) and understand the structure.  
+* The classes have already all party implemented, but their `hasReadAccess` and `hasWriteAccess` methods always return false.  
+* You have to adjust those methods for `Admin`, `Developer` and `Support` to return the correct values according to the rules specified above.
 
-You have to divide the students in a class into two groups. Each student has a number and you want to use this data to assign them to either group A or B.
+If the implementation is correct, all tests in unit test class `CheckITPersonAccessTest` should pass.
 
-Create a static method called  _giveGroup_, which takes in a student's number. If this is even, return the character "A", otherwise return the character "B".
+### Repairing Names
 
-### Cleaning data
+Due to some import error, the names of the whole IT-Crowd has been corrupted. The names now have underscores "_" instead of Spaces. See `RepairCrowdNamesTest` for details.
 
-The school needs to count how many of its future students want to learn Java. To do this, a survey was sent out asking students which language they wanted to study. Students wrote "Java" with inconsistent lower and upper case letters, e. g. "JAVA" or "java", instead of "Java".
+* You have to repair the name, split the name in two at "_" and set the Name again correctly with Forename+" "+Lastname
 
-Create a static method called  _countStudents_, which receives an array containing the languages chosen by the candidates. Return the number of candidates who have chosen Java, regardless of how they wrote it (upper/lower case).
+If your implementation is correct, all tests in unit test class `RepairCrowdNamesTest` should pass.
 
+### Taking Inventory of the Crowd
 
-### BlackJack (Bonus)
+We want to see how many `ITPerson` are working at our company. There should be a report like:
 
-Write a function that takes in parameter the hand of a player and the hand of the bank, then returns the winner of the game.
+```aidl
+Number of employees: 42
+Number of Admins: 2
+Number of Developers: 10
+Number of Support: 30
+```
 
-Rules : If the player or the bank has more than 21, he or it loses the game. The player wins if he has more than the bank and 21 or less. Same goes for the bank. In case of ex aeco, we will consider that the player wins. If the player has in hand an ace and a 10 points card (e.g. 1 + J or 1 + 10), he wins by BlackJack.
+Remember that you can check the ITPerson with `instanceof` for her real type.
 
-Values of the cards : The heads are worth 10 ("J", "Q", and "K") The numbers are worth what's indicated (a 4-card is worth 4 points) For simplicity purpose, the ace (1) is worth 1 point except for the Blackjack case where it's considered to be worth 11.
+### Generifying the Crowd
+
+We can store `ITPerson` in `ITPersonStorage`, see `StoringTheCrowdTest`. However, this is implemented in a not generic way.
+To be sure that our storage really stores `ITPerson`, we want to ensure that we can create a List with:
+
+`List<ITPerson> itcrowd = new ArrayList<>();`
+
+and can only add `ITPerson` or subclasses of it.
+See `ITPersonStorage` and create a new class `GenericStorage`, which can be generified with `ITPerson`, so that this is possible:
+
+`List<ITPerson> itcrowd = new ArrayList<>();`
+
+**Bonus**: Add another class `GenericITPersonStorage`, which restricts its usage for `ITPerson` and its subclasses.
 
 ### Testing
 
-Remember to test the methods you have developed.
+When you change implementation parts, always make sure the tests still pass.
 
 ## Quiz
 

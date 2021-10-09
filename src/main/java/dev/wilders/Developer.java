@@ -4,11 +4,16 @@ import java.time.LocalDate;
 
 public class Developer extends ITPerson {
 
-    private LocalDate employmentDate;
+    protected LocalDate employmentDate;
+
+    public Developer(String name, LocalDate employmentDate, boolean isCurrentlyWorkingAtCompany) {
+        super(name, isCurrentlyWorkingAtCompany);
+        this.employmentDate = employmentDate;
+    }
 
     @Override
     public boolean canAccessResourceReadOnly() {
-        return true;
+        return false;
     }
 
     @Override
