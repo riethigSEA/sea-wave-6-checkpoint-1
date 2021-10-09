@@ -18,7 +18,7 @@ Fork this repo and clone your copy of the repo to your local machine. **You will
 #### Import into IntelliJ
 
 * Use "File / New / Project from Version Control" and use your forked Repo URL
-* The IDE should recognize the Maven project and after the automatic setup you should be able to start `main` methods and unit tests.
+* The IDE should recognize the Maven project and after the automatic setup you should be able to execute all unit tests.
 
 ## Exercises
 
