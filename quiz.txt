@@ -13,13 +13,10 @@ A:
 Q: What sequence of commands allows me to share new changes in a local repository with an (already configured) remote repository?
 A:
 
-Q: How do you display a list of all the commits made on the current branch?
-A:
-
 Q: What is the value of the expression (true && false)?
 A:
 
-Q: How can you write `i = i + 5` more concisely?
+Q: How can you write `i = i + 1` more concisely?
 A:
 
 Q: What does the term "concatenation" mean?
