@@ -76,9 +76,8 @@ Answer the questions at the answer ("A:") lines.
 
 > Try to answer without any help from the Internet!
 
-
 ## Finalization
 
 Commit the changes made to your local branch; and push everything to your forked Repo.
 
-Post the URL of your Repo as a direct message to your trainer in Rocket Chat
+Post the URL of your Repo as a direct message to your trainer in Rocket Chat.
