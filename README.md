@@ -46,7 +46,7 @@ If the implementation is correct, all tests in unit test class `CheckITPersonAcc
 
 Due to some import error, the names of the whole IT-Crowd has been corrupted. The names now have underscores "_" instead of Spaces. See `RepairCrowdNamesTest` for details.
 
-* You have to repair the name, split the name in two at "_" and set the Name again correctly with Forename+" "+Lastname
+* You have to repair the name, split the name in two at "_" and set the Name again correctly with firstStringPart+" "+secondStringPart
 
 If your implementation is correct, all tests in unit test class `RepairCrowdNamesTest` should pass.
 
