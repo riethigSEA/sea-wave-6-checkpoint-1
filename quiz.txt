@@ -22,6 +22,15 @@ A:
 Q: What does the term "concatenation" mean?
 A:
 
+Q: Why is the check for "equals" with (object == object) not reliable? What should you use for check of equal objects?
+A:
+
+Q: What Collection implementation is ordered, but not sorted?
+A:
+
+Q: What Collection implementation has only unique elements?
+A:
+
 Q: How can we find out the number of elements of an array named "students"?
 A:
 
