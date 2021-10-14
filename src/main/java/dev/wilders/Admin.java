@@ -20,7 +20,7 @@ public class Admin extends ITPerson {
 
     @Override
     public boolean hasReadAccess() {
-        if(YEARS.between(lastCertified,LocalDate.now()) < 365.5) {
+        if(YEARS.between(lastCertified,LocalDate.now()) < 365) {
 
             return true;
         }
@@ -31,7 +31,7 @@ public class Admin extends ITPerson {
 
     @Override
     public boolean hasWriteAccess() {
-        if(DAYS.between(lastCertified,LocalDate.now()) < 365.5) {
+        if(DAYS.between(lastCertified,LocalDate.now()) < 365) {
 
             return true;
         }

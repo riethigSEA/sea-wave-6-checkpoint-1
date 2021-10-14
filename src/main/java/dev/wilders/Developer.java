@@ -22,7 +22,7 @@ public class Developer extends ITPerson {
     @Override
     public boolean hasWriteAccess() {
         // Add logic to evaluate Write access for Developer here.
-      if(DAYS.between(employmentDate,LocalDate.now()) > 182){
+      if(DAYS.between(employmentDate,LocalDate.now()) > 182.5){
 
           return true;
       }
