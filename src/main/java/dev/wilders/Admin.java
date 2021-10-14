@@ -2,11 +2,14 @@ package dev.wilders;
 
 import java.time.LocalDate;
 
+import static java.time.temporal.ChronoUnit.*;
+
+
 public class Admin extends ITPerson {
 
     protected LocalDate lastCertified;
 
-    public Admin(String name, LocalDate lastCertified) {
+    public Admin(String name,  LocalDate lastCertified) {
         super(name);
         this.lastCertified = lastCertified;
     }
@@ -17,13 +20,23 @@ public class Admin extends ITPerson {
 
     @Override
     public boolean hasReadAccess() {
-        // Add logic to evaluate Read access for Admin here.
-        return false;
+        if(YEARS.between(lastCertified,LocalDate.now()) < 365.5) {
+
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
     public boolean hasWriteAccess() {
-        // Add logic to evaluate Write access for Admin here.
-        return false;
+        if(DAYS.between(lastCertified,LocalDate.now()) < 365.5) {
+
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

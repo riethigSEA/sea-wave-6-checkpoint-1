@@ -13,11 +13,11 @@ public class StoringTheCrowdTest {
     @Test
     public void storeTheCrowdTestInNonGenericList() {
         // Arrange (Create a list of wrongly imported ITPersons)
-        ITPerson person1 = new Admin("Super_Admin", LocalDate.now().minusMonths(3));
-        ITPerson person2 = new Developer("Best_Developer", LocalDate.now().minusYears(2));
+        ITPerson person1 = new Admin("Super_Admin",  LocalDate.now().minusMonths(3));
+        ITPerson person2 = new Developer("Best_Developer",  LocalDate.now().minusYears(2));
         ITPerson person3 = new Support("Mega_Support", 2);
 
-        ITPersonStorage itPersonStorage = new ITPersonStorage();
+        GenericITPersonStorage itPersonStorage = new GenericITPersonStorage();
         itPersonStorage.storePerson(person1);
         itPersonStorage.storePerson(person2);
         itPersonStorage.storePerson(person3);
